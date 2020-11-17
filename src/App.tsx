@@ -1,26 +1,27 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { HeaderBar } from './components/HeaderBar/HeadearBar';
+import { Inscription } from './components/Inscription/Inscription';
+import { Login } from './components/Login/Login';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export class App extends React.PureComponent {
+  state = { 
+    user:{
+      name: 'Ryu', 
+      age: 30, 
+      belt: 'black'
+    }
+  }
+
+  render(){
+    console.log('app: ',this.state.user)
+    return (
+      <div className="App">
+        {/*<HeaderBar.Display user={this.state.user} />*/}
+        <Login.Display />
+        {/*<Inscription.Display />*/}
+      </div>
+    );
+  }
 }
-
-export default App;
